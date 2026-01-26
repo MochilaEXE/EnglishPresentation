@@ -1,2 +1,2 @@
 # EnglishPresentation
-That is it
+That's it

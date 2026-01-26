@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+}
+
+:root {
+  --red: #701c1c;
+  --beige: #f5deb3;
+  --white: #f0ead6;
+}
+
+html{
+    border: 0;
+}
+
+body{
+    border-radius: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--beige);
+    gap: min(3vh, 18px);
+}
+
+header{
+    padding-top: 2vh;
+    background-color: var(--red);
+    width: 100%;
+    position: relative;
+    height: min(22vh, 140px);
+    border-radius: 0 0 50% 50%;
+    color: var(--white);
+}
+
+.names{
+    font-family: Verdana, sans-serif;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    font-size: 1em;
+}
+
+.logo{
+    position: absolute;
+    top: 5%;
+    right: 1%;  
+    height: 50%;
+    aspect-ratio: initial;
+}
+
+h1{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    font-size: 2em;
+    font-family: 'Courier New', serif;
+    font-weight: 500;
+    height: fit-content;
+    text-shadow: black 2px 4px 6px;
+}
+
+.service-image{
+    margin-top: 1vh;
+    height: min(50vh, 90vw);
+    aspect-ratio: 1/1;
+    border: linear-gradient(var(--red),transparent) 5px solid;
+    border-radius: 15%;
+    background: #701c1c;
+    box-shadow: 0 0 15px 5px var(--red);
+}
+
+button{
+    --h: 40px;
+    margin-top: 1vh;
+    width: calc(3*var(--h));
+    height: var(--h);
+    border-radius: calc(0.3*var(--h));
+    border: var(--red) 2px solid;
+    background-color: var(--red);
+    color: var(--white);
+    font-size: 1.2em;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a{
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.description{
+    text-align: justify;
+    max-width: 90%;
+    margin: 0;
+    color: var(--red);
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:active{
+    background-color: var(--beige);
+    color: var(--red);
+}

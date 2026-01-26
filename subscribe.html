@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#701c1c">
+    <link rel="stylesheet" href="subscribe.css">
+    <link rel="icon" type="image/png" href="TSAM.png">
+    <title>Subscription</title>
+</head>
+<body>
+    <header>
+        <p class="names">Tiago<br>
+            Sofia<br>
+            Afonso<br>
+            Martim
+        </p>
+        <h1>Subscription</h1>
+        <img class="logo" src="TSAM.png" alt="">
+    </header>
+    <h2>HUGE DISCOUNT</h2>
+    <p class="discount">If you subscribe right now, you'll get a <span class="dtext">40% discount</span> on <strong>all</strong> plans! <br>
+    <span class="prices">
+        <br>Monthly subscription: 20£
+        <br>Annual subscription: 200£
+    </span></p>
+    <div class="radio-buttons">
+        <input type="radio" name="subscription" id="Monthly" checked>
+        <label for="Monthly">Monthly Subscription</label>
+        <input type="radio" name="subscription" id="Annual">
+        <label for="Annual">Annual Subscription</label>
+    </div>
+    <input type="text" name="name" id="name" placeholder="Full Name">
+    <input type="email" name="email" id="email" placeholder="Email Address">
+    <input type="number" name="credit" id="credit" placeholder="Credit Card Number">
+    <button width="100px" height="50px" onclick="playSound()">Submit</button>
+    <audio src="bell.mp3">hi</audio>
+    <script>
+        const button = document.querySelector("button");
+        const sound = document.querySelector("audio");
+
+        button.addEventListener("click", () => {
+            if(document.getElementById("name").value === "" || document.getElementById("email").value === "" || document.getElementById("credit").value === ""){
+                button.innerText = "Fill all fields!";
+                setTimeout(() => {
+                    button.innerText = "Submit";
+                }, 2000);
+                return; 
+            }
+            sound.play();
+            button.innerText = "Subscribed!";
+            button.disabled = true;
+            button.classList.add("clicked");
+        });
+        sound.addEventListener("ended", () => {
+            window.location.href = "index.html";
+        });
+    </script>
+</body>
+</html>
