@@ -33,10 +33,13 @@
     <input type="text" name="name" id="name" placeholder="Full Name">
     <input type="email" name="email" id="email" placeholder="Email Address">
     <input type="number" name="credit" id="credit" placeholder="Credit Card Number">
-    <button width="100px" height="50px" onclick="playSound()">Submit</button>
+    <div class="buttons">
+        <a href="index.html"><button width="100px" height="50px" class="cancel">Cancel</button></a>
+        <button width="100px" height="50px" class="submit" onclick="playSound()">Submit</button>
+    </div>
     <audio src="bell.mp3">hi</audio>
     <script>
-        const button = document.querySelector("button");
+        const button = document.getElementsByClassName("submit")[0];
         const sound = document.querySelector("audio");
 
         button.addEventListener("click", () => {

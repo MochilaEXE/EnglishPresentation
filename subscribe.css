@@ -6,10 +6,11 @@
   --red: #701c1c;
   --beige: #f5deb3;
   --white: #f0ead6;
+  --minHeight: 630px;
 }
 
 html{
-    border: 0;
+    height: 100%;
 }
 
 body{
@@ -19,17 +20,17 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
+    min-height: var(--minHeight);
     background-color: var(--beige);
     gap: min(3.5vh, 30px);
 }
 
 header{
-    padding-top: 2vh;
+    padding-top: calc(0.02*max(100vh,var(--minHeight)));
     background-color: var(--red);
     width: 100%;
     position: relative;
-    height: min(22vh, 140px);
+    height: min(calc(0.22*max(100vh,var(--minHeight))), 140px);
     border-radius: 0 0 50% 50%;
     color: var(--white);
 }
@@ -130,7 +131,7 @@ input{
     border: 0;
     padding: 5px 10px;
     width: min(80vw, 400px);
-    height: min(5vh, 50px);
+    height: min(calc(0.05*max(100vh,var(--minHeight))), 50px);
 }
 
 input:focus[type="text"],
@@ -140,6 +141,12 @@ input:focus[type="number"]{
 }
 input::placeholder{
     color: var(--red);
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
 button{
@@ -159,6 +166,12 @@ button{
     margin-bottom: 20px;
 }
 
-button.clicked{
+.cancel{
+    background-color: var(--beige);
+    color: var(--red);
+    border: var(--red) 2px solid;
+}
+
+.submit.clicked{
     cursor: wait;
 }
